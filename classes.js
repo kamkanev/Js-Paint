@@ -13,14 +13,14 @@ class Brush{
     }
     makeVisible(){
         context.beginPath();
-        context.fillStyle = this.color;
+        context.fillStyle = this.c;
         context.arc(this.x, this.y, this.s, 0, 2 * Math.PI);
         context.fill();
         context.closePath();
     }
     draw(points){
         if(this.isPressed){
-            points.push({x: this.x, y: this.y, c: this.c});
+            points[points.length-1].push({x: this.x, y: this.y, c: this.c, s: this.s});
         }
     }
 }
