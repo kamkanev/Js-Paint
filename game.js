@@ -3,14 +3,12 @@
 var points = [];
 
 function update() {
-    brush.updateLocation(mouseX, mouseY);
-    brush.c = getColor();
+    brush.update(mouseX, mouseY);
     brush.draw(points);
 }
 
 function draw() {
     // This is how you draw a rectangle
-    brush.makeVisible();
     for (var j = 0; j < points.length; j++) {
         
         for(var i = 1; i < points[j].length; i++){
@@ -24,6 +22,7 @@ function draw() {
         }
         
     }
+    brush.makeVisible();
 };
 
 function keyup(key) {

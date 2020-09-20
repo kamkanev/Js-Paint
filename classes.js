@@ -11,6 +11,11 @@ class Brush{
         this.x = this.x+(newX-this.x);
         this.y = this.y+(newY-this.y);
     }
+    update(newX, newY){
+        this.updateLocation(newX, newY);
+        this.c = getColor();
+        this.s = getSize();
+    }
     makeVisible(){
         context.beginPath();
         context.fillStyle = this.c;
