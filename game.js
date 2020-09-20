@@ -12,13 +12,15 @@ function draw() {
     for (var j = 0; j < points.length; j++) {
         
         for(var i = 1; i < points[j].length; i++){
-            context.strokeStyle = points[j][i].c;
+            if(points[j][i].type == 0){
+                context.strokeStyle = points[j][i].c;
             context.beginPath();
             context.moveTo(points[j][i-1].x, points[j][i-1].y);
             context.lineTo(points[j][i].x, points[j][i].y);
             context.lineWidth = points[j][i].s;
             context.stroke();
             context.closePath();
+            }
         }
         
     }

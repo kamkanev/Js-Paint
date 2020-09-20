@@ -25,7 +25,7 @@ class Brush{
     }
     draw(points){
         if(this.isPressed){
-            points[points.length-1].push({x: this.x, y: this.y, c: this.c, s: this.s});
+            points[points.length-1].push({type: this.type, x: this.x, y: this.y, c: this.c, s: this.s});
         }
     }
 }
