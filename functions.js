@@ -12,6 +12,10 @@ function getSize() {
         size = 1;
         document.getElementById('sizeP').value = "1";
     }
+    if(size >= 20){
+        size = 20;
+        document.getElementById('sizeP').value = "20";
+    }
 
     return size;
 

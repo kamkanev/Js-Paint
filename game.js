@@ -19,7 +19,31 @@ function draw() {
             context.lineTo(points[j][i].x, points[j][i].y);
             context.lineWidth = points[j][i].s;
             context.stroke();
+            // context.fill();
             context.closePath();
+            }else if(points[j][i].type == 1){
+                context.fillStyle = points[j][i].c;
+                switch (points[j][i].form) {
+                    case 0:
+                        context.fillRect(points[j][i].x - points[j][i].s/2, points[j][i].y - points[j][i].s/2, points[j][i].s, points[j][i].s);
+                        break;
+                    case 1:
+
+                        context.beginPath();
+
+                    context.moveTo(points[j][i].x, points[j][i].y - points[j][i].s);
+                    context.lineTo(points[j][i].x + points[j][i].s, points[j][i].y + points[j][i].s);
+                    context.lineTo(points[j][i].x - points[j][i].s, points[j][i].y + points[j][i].s);
+                    
+
+                    context.fill();
+                    context.closePath();
+
+                        break;
+                    default:
+                        context.fillRect(points[j][i].x - points[j][i].s/2, points[j][i].y - points[j][i].s/2, points[j][i].s, points[j][i].s);
+                        break;
+                }
             }
         }
         
